@@ -1,3 +1,2 @@
-test 
-testvfklzlvzc
-voxzcovkxcv
+git是檔案歷程管理
+github是檔案歷程分享

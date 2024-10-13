@@ -10,12 +10,12 @@ class player:
     def __init__(self,姓名):
         self.姓名=姓名
     def 防禦(self,指令):
-        if 指令=="格檔":
+        if 指令==1:
             print(f"{self.姓名}舉起武器格檔!")
             return 0.5
-        elif 指令=="閃避":
+        elif 指令==2:
             print(f"{self.姓名}進行閃避")
-            是否命中=random.choice([0,1])
+            return random.choice([0.3,1])
 class 戰士(player):
     def 攻擊(self,指令):
         if 指令==1:
@@ -40,7 +40,7 @@ class 魔物(player):
 while True:
     攻擊指令=int(input("請輸入您的攻擊指令(1)普功(2)特殊攻擊:"))
     玩家攻擊力=玩家.攻擊(攻擊指令)
-    損血=int(敵方.防禦(隨機)*玩家攻擊力)
+    損血=int(敵方.防禦(隨機) * 玩家攻擊力)
     敵方.HP-=損血
     if 敵方.HP<=0:
         print(f"{敵方.姓名}倒下，{玩家.姓名}勝利!!")
@@ -51,7 +51,7 @@ while True:
 
     防禦指令=int(input("請輸入您的防禦指令(1)格擋(2)閃避:"))
     敵方攻擊力=敵方.攻擊(隨機)
-    損血=int(玩家.防禦(防禦指令)*敵方攻擊力)
+    損血=int(玩家.防禦(防禦指令) * 敵方攻擊力)
     玩家.HP-=損血
     if 玩家.HP<=0:
         print(f"{玩家.姓名}倒下，{敵方.姓名}勝利!!")
